@@ -4,7 +4,6 @@ namespace DomainSOSPet.Entities
 {
     public class Menu
     {
-        [Key]
         public int IdMenu { get; set; }
         public int IdMenuPai { get; set; }
         [Required]

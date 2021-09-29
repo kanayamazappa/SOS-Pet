@@ -4,7 +4,6 @@ namespace DomainSOSPet.Entities
 {
     public class Pelagem
     {
-        [Key]
         public int IdPelagem { get; set; }
         [Required]
         [StringLength(50)]

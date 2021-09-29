@@ -4,7 +4,6 @@ namespace DomainSOSPet.Entities
 {
     public class Raca
     {
-        [Key]
         public int IdRaca { get; set; }
         public int IdEspecie { get; set; }
         [Required]

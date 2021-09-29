@@ -6,7 +6,7 @@ namespace DomainSOSPet.Entities
     public class Cidade
     {
         public int IdCidade { get; set; }
-        public int IdEstado { get; set; }
+        public Estado Estado { get; set; }
         [Required]
         [StringLength(255)]
         public string Nome { get; set; }
