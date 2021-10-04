@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using RepositorySOSPet.Models;
 
 namespace ServiceSOSPet
 {
@@ -28,7 +27,6 @@ namespace ServiceSOSPet
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ServiceSOSPet", Version = "v1" });
             });
 
-            services.AddTransient<ApplicationDbContext>();
             services.AddTransient<AppOng>();
             services.AddTransient<AppUsuario>();
         }
