@@ -1,12 +1,46 @@
 version: "3.4"
 services: 
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-CU12-ubuntu-20.04
-    container_name: SQLServer
-    environment: 
-      - "ACCEPT_EULA=Y"
-      - "SA_PASSWORD=p0rt@lp3t"
+  mysqlsrv:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "@JHYgItBgeXi"
+      MYSQL_DATABASE: "SOSPet"
+      MYSQL_USER: "sospet"
+      MYSQL_PASSWORD: "S0SP3t!"
     ports:
-      - "1433:1433"
+      - "3306:3306"
     volumes:
-      - C:\UNIVESP\PROJETOINTEGRADOR\BD:/var/opt/mssql/data
+      - C:\UNIVESP\PROJETOINTEGRADOR\MYSQL:/var/lib/mysql
+    networks:
+      - univesp-network
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - univesp-network
+  site:
+    image: django-sandbox:latest
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - C:\UNIVESP\PROJETOINTEGRADOR\SITE:/code
+    ports:
+      - "8000:8000"
+    links:
+      - mysqlsrv
+    networks:
+      - univesp-network
+networks: 
+  univesp-network:
+    driver: bridge
+  # sqlserver:
+  #   image: mcr.microsoft.com/mssql/server:2019-CU12-ubuntu-20.04
+  #   container_name: SQLServer
+  #   environment: 
+  #     - "ACCEPT_EULA=Y"
+  #     - "SA_PASSWORD=p0rt@lp3t"
+  #   ports:
+  #     - "1433:1433"
+  #   volumes:
+  #     - C:\UNIVESP\PROJETOINTEGRADOR\BD:/var/opt/mssql/data
