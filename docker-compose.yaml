@@ -31,16 +31,16 @@ services:
       - mysqlsrv
     networks:
       - univesp-network
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-CU12-ubuntu-20.04
+    container_name: SQLServer
+    environment: 
+      - "ACCEPT_EULA=Y"
+      - "SA_PASSWORD=p0rt@lp3t"
+    ports:
+      - "1433:1433"
+    volumes:
+      - C:\UNIVESP\PROJETOINTEGRADOR\BD:/var/opt/mssql/data
 networks: 
   univesp-network:
     driver: bridge
-  # sqlserver:
-  #   image: mcr.microsoft.com/mssql/server:2019-CU12-ubuntu-20.04
-  #   container_name: SQLServer
-  #   environment: 
-  #     - "ACCEPT_EULA=Y"
-  #     - "SA_PASSWORD=p0rt@lp3t"
-  #   ports:
-  #     - "1433:1433"
-  #   volumes:
-  #     - C:\UNIVESP\PROJETOINTEGRADOR\BD:/var/opt/mssql/data
