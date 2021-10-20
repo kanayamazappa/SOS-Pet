@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'ong',
     'clinic',
     'login',
+    'pet'
 ]
 
 MIDDLEWARE = [
