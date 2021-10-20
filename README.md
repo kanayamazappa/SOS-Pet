@@ -5,5 +5,15 @@ Projeto: Aplicativo Web para Ongs de Proteção aos Animais Aplicativo web que c
 # Instalação
 
 Faça o download do Docker Descktop: https://hub.docker.com/editions/community/docker-ce-desktop-windows
+e realize a instalação.
 
-Após isso faça o clone deste projeto em sua maquina.
+Crie uma pasta para colocar seu projeto ex: C:\UNIVESP\PROJETOINTEGRADOR\
+Após isso faça o clone deste projeto nesta pasta. Acesse o cmd e digite: git clone https://github.com/kanayamazappa/SOS-Pet.git
+Obs: Vai solicitar seu e-mail e senha.
+
+Feito o clone, digite no mesmo cmd: docker-compose up -d
+
+Pronto, se tudo ocorre corretamente acesse http://localhost:8000/admin
+
+Usuário: admin
+Senha: sospet123
