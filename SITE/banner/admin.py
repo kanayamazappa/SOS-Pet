@@ -7,7 +7,7 @@ from imagekit.cachefiles import ImageCacheFile
 from . import models
 
 class AdminThumbnailSpec(ImageSpec):
-    processors = [ResizeToFill(100, 30)]
+    processors = [ResizeToFill(150, 60)]
     format = 'JPEG'
     options = {'quality': 60 }
 
@@ -22,7 +22,7 @@ def cached_admin_thumb(instance):
 @admin.register(models.Banner)
 class BannerAdmin(SortableAdminMixin, admin.ModelAdmin):
     model = models.Banner
-    fields = ('title', 'banner', 'active',)
+    fields = ('title', 'link', 'banner', 'active',)
     banner_display = AdminThumbnail(image_field=cached_admin_thumb)
     banner_display.short_description = 'Imagem'
 

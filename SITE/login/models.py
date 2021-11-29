@@ -5,6 +5,7 @@ class Login(models.Model):
     name = models.CharField(verbose_name=u"Nome", max_length=150)
     email = models.EmailField(verbose_name=u"E-mail")
     password = models.CharField(verbose_name=u"Senha", max_length=1024)
+    active = models.BooleanField(verbose_name=u"Ativo?", default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -12,6 +13,7 @@ class Login(models.Model):
         return self.name
 
     class Meta:
+        index_together = [['email', 'active']]
         verbose_name = u'Usuário'
         verbose_name_plural = u'Usuários'
 
