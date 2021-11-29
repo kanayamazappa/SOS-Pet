@@ -14,6 +14,8 @@ class Ong(models.Model):
     city = models.CharField(verbose_name=u"Cidade", max_length=150)
     state = models.CharField(verbose_name=u"Estado", max_length=2)
     zipCode = models.CharField(verbose_name=u"CEP", max_length=10)
+    bank = models.CharField(verbose_name=u"Conta bancário", max_length=50, null=False, blank=False, help_text=u"Conta bancário da Ong")
+    pix = models.CharField(verbose_name=u"PIX", max_length=50, null=False, blank=False, help_text=u"PIX da Ong")
     slug = AutoSlugField(populate_from=u"name")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -26,11 +26,13 @@
         <tr><th>Telefone</th><td>{{ong.telephone}}</td></tr>
         <tr><th>Logradouro</th><td>{{ong.street}}</td></tr>
         <tr><th>Número</th><td>{{ong.number}}</td></tr>
-        <tr><th>Complemento</th><td>{{ong.complement}}</td></tr>
+        <tr><th>Complemento</th><td>{{ong.complement|default:"-"}}</td></tr>
         <tr><th>Bairro</th><td>{{ong.district}}</td></tr>
         <tr><th>Cidade</th><td>{{ong.city}}</td></tr>
         <tr><th>Estado</th><td>{{ong.state}}</td></tr>
         <tr><th>CEP</th><td>{{ong.zipCode}}</td></tr>
+        <tr><th>Conta Bancária</th><td>{{ong.bank|default:"-"}}</td></tr>
+        <tr><th>PIX</th><td>{{ong.pix|default:"-"}}</td></tr>
       </table>
       <a href="/ongs" class="btn btn-primary btn-pedido-doacao">Voltar</a>
     </div>
